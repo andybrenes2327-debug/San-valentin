@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #ffebf0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* Importante para que el botón no cree scroll al huir */
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 90%; /* Ancho responsivo */
+    max-width: 450px;
+    z-index: 10;
+}
+
+h1 {
+    color: #ff4b6e;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.gif-main img {
+    width: 150px;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row; /* Botones al lado del otro */
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Si no caben, se bajan */
+}
+
+.btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.si {
+    background-color: #ff4081;
+    color: white;
+    animation: latido 1.2s infinite;
+}
+
+.no {
+    background-color: #9e9e9e;
+    color: white;
+    z-index: 999;
+}
+
+/* GIFs de decoración laterales */
+.decoracion {
+    position: fixed;
+    bottom: 10px;
+    width: 80px;
+    pointer-events: none; /* Para que no estorben al hacer click */
+}
+
+.izq { left: 10px; }
+.der { right: 10px; }
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 600px) {
+    h1 { font-size: 1.5rem; }
+    .decoracion { width: 50px; } /* GIFs más pequeños en móvil */
+}
+
+@keyframes latido {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
